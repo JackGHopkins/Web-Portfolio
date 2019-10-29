@@ -67,6 +67,32 @@ body{
   transition: 0.3s;
 }
 
+/* Scroll back to top Btn */
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  z-index: 99;
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.0);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  border: none;
+
+}
+
+#topBtn:hover {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+
 /* The meat of the Webpage in the infomation class */
 .information{
   position: absolute;
