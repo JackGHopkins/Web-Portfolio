@@ -173,7 +173,15 @@ body{
   font-size: 24px;
 }
 
-
+#logo {
+	width: 20%;
+	height: auto;
+	margin-left: 40%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+}
 
 /* Directors */
 
