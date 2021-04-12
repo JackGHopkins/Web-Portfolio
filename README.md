@@ -1,2 +1,4 @@
 # Web-Portfolio
-Place for my Website
+Code Base of my Website.
+
+Go see it here: JackGHopkins.org
