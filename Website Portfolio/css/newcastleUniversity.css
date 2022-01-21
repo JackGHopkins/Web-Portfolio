@@ -196,6 +196,30 @@ body {
     transition: 1s;
 }
 
+.CSC8501 .container:hover {
+    background: url(../img/CollatzPassword.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+}
+
+.CSC8502 .container:hover {
+    background: url(../img/csc3502.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+}
+
+.CSC8503 .container:hover {
+    background: url(../img/ScrewballThumbnail.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+}
+
 .container {
     padding-top: 5%;
     padding-bottom: 5%;

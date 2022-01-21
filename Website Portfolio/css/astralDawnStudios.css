@@ -366,6 +366,20 @@ iframe {
     padding-right: 2.5%;
 }
 
+.imgContainerWide ul {
+    list-style-type: none;
+    text-align: center;
+    float: center;
+}
+
+.imgContainerWide li {
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
 iframe {
     width: 640px;
     height: 360px;
@@ -375,6 +389,8 @@ iframe {
 /* Drawings */
 
 #gaul {
+    border-radius: 5px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
     width: 100%;
     height: auto;
 }
