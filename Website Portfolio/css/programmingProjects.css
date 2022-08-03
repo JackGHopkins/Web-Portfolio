@@ -185,7 +185,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     transition: 1s;
 }
 
@@ -229,6 +229,25 @@ body {
     transition: 1s;
 }
 
+.GuidedMissle .container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    transition: 1s;
+    background: rgba(0, 0, 0, 0);
+}
+
+.GuidedMissle .container:hover {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background: url(../img/GuidedMissle.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+}
 
 .art .container {
     padding-top: 5%;
