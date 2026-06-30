@@ -1,6 +1,3 @@
-/* ============================================
-   PAGE HEADER (shared pattern across sub-pages)
-   ============================================ */
 .page-header {
   padding: var(--space-5) 0 var(--space-4);
   border-bottom: 1px solid var(--line-faint);
@@ -16,11 +13,13 @@
   font-size: 1.08rem;
   max-width: 62ch;
   line-height: 1.75;
+  hyphens: none;
 }
 
-/* ============================================
-   TIMELINE
-   ============================================ */
+.page-intro .no-break {
+  white-space: nowrap;
+}
+
 .timeline {
   max-width: var(--col-max);
 }
@@ -209,9 +208,6 @@
   .timeline-dot { width: 10px; height: 10px; }
 }
 
-/* ============================================
-   SKILLS SPECTRUM
-   ============================================ */
 .skills-spectrum-section {
   padding-bottom: 0;
 }
@@ -273,7 +269,6 @@
   box-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* Cards row — four equal columns aligned under the dots */
 .spectrum-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -1,6 +1,3 @@
-/* ============================================
-   CONTACT GRID
-   ============================================ */
 .contact-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -8,9 +5,6 @@
   align-items: start;
 }
 
-/* Contact page content is intentionally short; the default --space-5
-   section padding (designed for content-dense pages) reads as too sparse
-   here, especially on mobile where the grid collapses to one column. */
 .contact-page-section {
   padding-top: var(--space-3);
   padding-bottom: var(--space-4);
@@ -65,9 +59,6 @@ a.contact-row:hover .contact-row-arrow {
   cursor: default;
 }
 
-/* ============================================
-   CONTACT CARD (side note)
-   ============================================ */
 .contact-card {
   background: var(--surface);
   border: 1px solid var(--line);

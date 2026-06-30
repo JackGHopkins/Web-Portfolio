@@ -1,6 +1,3 @@
-/* ============================================
-   EDUCATION BLOCK
-   ============================================ */
 .edu-block {
   max-width: var(--col-wide);
 }
@@ -53,9 +50,6 @@
   padding-top: 0.5rem;
 }
 
-/* ============================================
-   MODULE / DISSERTATION CARDS
-   ============================================ */
 .module-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

@@ -1,6 +1,3 @@
-/* ============================================
-   FEATURED PROJECT
-   ============================================ */
 .project-feature {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -85,9 +82,6 @@
   margin: 1.2rem 0 1rem;
 }
 
-/* ============================================
-   PROJECT GRID
-   ============================================ */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -180,10 +174,6 @@
   margin-top: 1.1rem;
 }
 
-/* ============================================
-   MULTI-EMBED SECTION (e.g. Deceit 2 — several
-   platform embeds under one project header)
-   ============================================ */
 .project-multi-feature {
   display: flex;
   flex-direction: column;
