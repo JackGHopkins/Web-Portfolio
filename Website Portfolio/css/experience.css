@@ -1,0 +1,339 @@
+/* ============================================
+   PAGE HEADER (shared pattern across sub-pages)
+   ============================================ */
+.page-header {
+  padding: var(--space-5) 0 var(--space-4);
+  border-bottom: 1px solid var(--line-faint);
+}
+
+.page-header h1 {
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  margin: 0.8rem 0 1rem;
+}
+
+.page-intro {
+  color: var(--text-dim);
+  font-size: 1.08rem;
+  max-width: 62ch;
+  line-height: 1.75;
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.timeline {
+  max-width: var(--col-max);
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: var(--space-3);
+}
+
+.timeline-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--text-faint);
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+}
+
+.timeline-dot-current {
+  border-color: var(--wire);
+  box-shadow: 0 0 0 4px var(--wire-dim);
+}
+
+.timeline-line {
+  width: 1px;
+  flex: 1;
+  background: var(--line);
+  margin-top: 0.5rem;
+}
+
+.timeline-body {
+  padding-bottom: var(--space-5);
+}
+
+.timeline-entry:last-child .timeline-body {
+  padding-bottom: 0;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--wire);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+}
+
+.timeline-body h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-org {
+  color: var(--text-dim);
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+.timeline-org-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.timeline-org-row .timeline-org {
+  margin-bottom: 0;
+}
+
+.timeline-progression {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--label);
+  margin-bottom: 1.4rem;
+}
+
+.timeline-logo-slot {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.timeline-logo-real {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface-raised);
+}
+
+.timeline-logo-real img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.timeline-logo-slot .img-slot-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.timeline-logo-slot .img-slot-label {
+  display: none;
+}
+
+.timeline-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+
+.timeline-points li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.timeline-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.timeline-photo {
+  margin-top: 1.4rem;
+  max-width: 480px;
+}
+
+.timeline-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.timeline-photo figcaption {
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--label);
+}
+
+.inline-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--wire);
+  border-bottom: 1px solid var(--wire-dim);
+  transition: opacity 0.25s ease;
+}
+
+.timeline-inline-link {
+  color: var(--wire);
+  border-bottom: 1px solid var(--wire-dim);
+  transition: opacity 0.25s ease;
+}
+
+.timeline-inline-link:hover {
+  opacity: 0.7;
+}
+
+.inline-link:hover { opacity: 0.7; }
+
+@media (max-width: 560px) {
+  .timeline-entry { grid-template-columns: 18px 1fr; gap: 1rem; }
+  .timeline-dot { width: 10px; height: 10px; }
+}
+
+/* ============================================
+   SKILLS SPECTRUM
+   ============================================ */
+.skills-spectrum-section {
+  padding-bottom: 0;
+}
+
+.skills-spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  --spectrum-label-w: 5rem;
+}
+
+/* Axis bar */
+.spectrum-axis {
+  display: grid;
+  grid-template-columns: var(--spectrum-label-w) 1fr var(--spectrum-label-w);
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.spectrum-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--label);
+}
+
+.spectrum-label-left { text-align: right; color: var(--wire); }
+.spectrum-label-right { text-align: left; color: var(--accent); }
+
+.spectrum-track {
+  position: relative;
+  height: 2px;
+}
+
+.spectrum-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--wire) 0%, var(--accent) 100%);
+  opacity: 0.7;
+  border-radius: 1px;
+}
+
+.spectrum-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--wire);
+  box-shadow: 0 0 8px var(--wire-dim);
+}
+
+.spectrum-dot-tech {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Cards row — four equal columns aligned under the dots */
+.spectrum-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  padding: 1.4rem calc(var(--spectrum-label-w) + 1rem) 0;
+}
+
+.spectrum-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--wire);
+  border-radius: 0 0 6px 6px;
+  padding: 1.1rem var(--space-3) var(--space-3);
+  position: relative;
+}
+
+.spectrum-card::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  background: var(--bg);
+  border-radius: 50%;
+  border: 2px solid var(--wire);
+  box-shadow: 0 0 8px var(--wire-dim);
+}
+
+.spectrum-card-tech {
+  border-top-color: var(--accent);
+}
+
+.spectrum-card-tech::before {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.spectrum-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.spectrum-card p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .skills-spectrum { --spectrum-label-w: 3.5rem; }
+  .spectrum-cards {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 0 0;
+  }
+  .spectrum-card::before { display: none; }
+}
+
+@media (max-width: 560px) {
+  .spectrum-cards { grid-template-columns: 1fr; }
+  .spectrum-axis { display: none; }
+}

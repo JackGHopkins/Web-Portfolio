@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --bg: #0B0D10;
+  --surface: #15181D;
+  --surface-raised: #1B1F26;
+  --line: #262B33;
+  --line-faint: #1C2027;
+
+  --text: #E8E6E1;
+  --text-dim: #9CA3AF;
+  --text-faint: #5B6270;
+  /* Dedicated token for small functional text labels (eyebrows, footer meta,
+     row labels). --text-faint fails WCAG AA contrast (3.17:1) at the small
+     sizes these are typically set in; --label passes (5.61:1) while staying
+     visually in the same "quiet" register. Use --text-faint only for
+     non-text decoration (borders, dividers) where contrast rules don't apply. */
+  --label: #838A98;
+
+  --accent: #FF6A3D;
+  --accent-dim: #B84F2E;
+  --accent-glow: rgba(255, 106, 61, 0.16);
+
+  --wire: #5EEAD4;
+  --wire-dim: rgba(94, 234, 212, 0.35);
+
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  --col-max: 920px;
+  --col-wide: 1180px;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+  --space-6: 8rem;
+}
+
+@media (prefers-color-scheme: light) {
+  /* Site is intentionally dark-only; no override needed, but token exists for future use */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* subtle grid texture on the base layer, like a viewport floor grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-faint) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 70%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+ul { list-style: none; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--wire);
+  outline-offset: 3px;
+}
+
+/* Suppress the outline when <main> receives programmatic focus from the
+   skip-link (via tabindex="-1"). Outlining the entire content region would
+   look broken; the skip-link's own visible focus state plus the resulting
+   scroll position already give sighted keyboard users clear feedback. */
+main:focus {
+  outline: none;
+}
+
+/* ============================================
+   SKIP LINK
+   ============================================ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 200;
+  background: var(--wire);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem 1.3rem;
+  border-radius: 3px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ============================================
+   EYEBROW / LABEL
+   ============================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wire);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--wire);
+  border-radius: 1px;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem clamp(1.5rem, 5vw, 3.5rem);
+  background: rgba(11, 13, 16, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-faint);
+}
+
+.site-nav .brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.site-nav .brand .dot { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: clamp(0.4rem, 2vw, 1.6rem);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 0.5rem 0.2rem;
+  color: var(--text-dim);
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--text);
+}
+
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+  background: var(--wire);
+}
+
+.nav-cta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.btn-mini {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  border: 1px solid var(--line);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  color: var(--text);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.btn-mini:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 0.5rem 0.7rem;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    padding: 1.2rem clamp(1.5rem, 5vw, 3.5rem);
+    border-bottom: 1px solid var(--line);
+    gap: 0.2rem;
+  }
+  .nav-links.open a { padding: 0.8rem 0.2rem; }
+}
+
+/* ============================================
+   LAYOUT PRIMITIVES
+   ============================================ */
+.shell {
+  max-width: var(--col-wide);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.col {
+  max-width: var(--col-max);
+}
+
+.section {
+  padding: var(--space-5) 0;
+  position: relative;
+}
+
+.section-head {
+  margin-bottom: var(--space-4);
+}
+
+.section-head h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  margin-top: 0.6rem;
+}
+
+.section-head p {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 56ch;
+  margin-top: 0.8rem;
+}
+
+/* divider between major sections - blueprint wire motif */
+.wire-divider {
+  width: 100%;
+  height: 48px;
+  margin: 0 auto;
+  display: block;
+  opacity: 0.55;
+}
+
+.wire-divider line, .wire-divider path {
+  stroke: var(--line);
+}
+
+.wire-divider circle {
+  fill: var(--bg);
+  stroke: var(--wire-dim);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--line-faint);
+  padding: var(--space-4) 0 var(--space-5);
+  margin-top: var(--space-5);
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.footer-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--label);
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.footer-links a {
+  color: var(--text-dim);
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--wire);
+  border-color: var(--wire-dim);
+}
+
+/* ============================================
+   SHARED COMPONENTS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 3px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0B0D10;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 24px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--wire-dim);
+  color: var(--wire);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: var(--space-3);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-dim);
+}
+
+/* ============================================
+   SKILLS GRID (shared component, used on
+   Experience)
+   ============================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.skills-grid .card h3 {
+  font-size: 1.1rem;
+  margin: 0.8rem 0 0.5rem;
+}
+
+.skills-grid .card p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* node dot used inline as a decorative marker */
+.node-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wire);
+  box-shadow: 0 0 8px var(--wire-dim);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   IMAGE SLOT (placeholder for content not yet supplied)
+   ============================================ */
+.img-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  color: var(--label);
+  text-align: center;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.img-slot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, var(--line-faint) 25%, transparent 25%, transparent 75%, var(--line-faint) 75%),
+    linear-gradient(45deg, var(--line-faint) 25%, transparent 25%, transparent 75%, var(--line-faint) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.img-slot-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.img-slot-label {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  max-width: 26ch;
+}
+
+.img-slot-label strong {
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+/* Fixed aspect-ratio variants, used where a slot sits in place of a
+   specific shape of photo rather than filling a flexible card area */
+.img-slot-16x9 { aspect-ratio: 16/9; }
+.img-slot-1x1 { aspect-ratio: 1/1; }
+.img-slot-4x3 { aspect-ratio: 4/3; }
+.img-slot-3x4 { aspect-ratio: 3/4; }
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* If JS never runs (blocked, fails, no-script), content must still be
+   readable rather than permanently hidden at opacity: 0. */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .footer-grid { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================
+   SHARED LINK STYLE — teal mono underline
+   (used on project embeds, education links,
+   and the MVX outbound link)
+   ============================================ */
+.embed-fallback-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--wire);
+  border-bottom: 1px solid var(--wire-dim);
+  align-self: flex-start;
+  transition: opacity 0.25s ease;
+}
+
+.embed-fallback-link:hover {
+  opacity: 0.7;
+}

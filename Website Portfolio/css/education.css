@@ -1,0 +1,151 @@
+/* ============================================
+   EDUCATION BLOCK
+   ============================================ */
+.edu-block {
+  max-width: var(--col-wide);
+}
+
+.edu-block-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.edu-block-head h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0.6rem 0 0.4rem;
+}
+
+.edu-degree {
+  color: var(--text-dim);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.edu-grade {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-dim);
+  color: var(--accent);
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.edu-summary {
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  max-width: 70ch;
+  margin-bottom: 1.8rem;
+}
+
+.edu-sub-head {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+/* ============================================
+   MODULE / DISSERTATION CARDS
+   ============================================ */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.module-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.module-card > .img-slot {
+  border-radius: 0;
+  border-width: 0 0 1px 0;
+  margin: 0;
+}
+
+.module-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center top;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.module-card > *:not(.img-slot):not(.module-card-img) {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
+.module-card > .img-slot + *,
+.module-card > .module-card-img + * {
+  padding-top: var(--space-3);
+}
+
+.module-card > *:first-child:not(.img-slot):not(.module-card-img) {
+  padding-top: var(--space-3);
+}
+
+.module-card > *:last-child {
+  padding-bottom: var(--space-3);
+}
+
+.module-card-wide {
+  max-width: 640px;
+}
+
+.module-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--wire);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.7rem;
+}
+
+.module-card h4 {
+  font-size: 1.08rem;
+  margin-bottom: 0.6rem;
+}
+
+.module-card p:not(.module-tag) {
+  color: var(--text-dim);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.module-card .inline-link,
+.module-card .embed-fallback-link {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.module-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin-top: 1rem;
+}
+
+.module-card-links .inline-link,
+.module-card-links .embed-fallback-link {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .edu-block-head { flex-direction: column; }
+}

@@ -1,0 +1,99 @@
+/* ============================================
+   CONTACT GRID
+   ============================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+/* Contact page content is intentionally short; the default --space-5
+   section padding (designed for content-dense pages) reads as too sparse
+   here, especially on mobile where the grid collapses to one column. */
+.contact-page-section {
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-4);
+}
+
+.contact-direct {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 24px;
+  align-items: center;
+  padding: 1.5rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left 0.3s ease, background 0.3s ease;
+}
+
+a.contact-row:hover {
+  padding-left: 1rem;
+  background: var(--surface);
+}
+
+.contact-row-label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--label);
+}
+
+.contact-row-value {
+  font-size: 1.15rem;
+  font-family: var(--font-display);
+}
+
+.contact-row-arrow {
+  color: var(--wire);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-6px);
+}
+
+a.contact-row:hover .contact-row-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-row-static {
+  cursor: default;
+}
+
+/* ============================================
+   CONTACT CARD (side note)
+   ============================================ */
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.contact-cv-btn {
+  margin: var(--space-3);
+  align-self: stretch;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-row { grid-template-columns: 80px 1fr 20px; }
+  .contact-row-value { font-size: 1rem; }
+}
