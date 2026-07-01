@@ -5,7 +5,7 @@
     <script>document.documentElement.classList.remove("no-js");</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jack Hopkins — Technical Gameplay Designer specialising in Unreal Engine, Blueprint visual scripting and the Gameplay Ability System.">
+    <meta name="description" content="Jack Hopkins — Technical Gameplay Designer specialising in Unreal Engine, Blueprint visual scripting and the Gameplay Ability System. Experience, projects, education and contact, all on one page.">
     <meta name="keywords" content="Jack Hopkins, Technical Gameplay Designer, Unreal Engine, Blueprint, Gameplay Ability System, Game Designer Cambridge">
     <meta name="author" content="Jack Hopkins">
     <link rel="icon" href="img/jghLogo.png">
@@ -15,13 +15,26 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Jack G Hopkins — Technical Gameplay Designer">
     <meta property="og:description" content="Technical Gameplay Designer based in Cambridge, UK, currently shipping DLCs and live service content in Unreal Engine 5 at World Makers.">
-    <meta property="og:url" content="https://jackhopkins.dev/index.html">
+    <meta property="og:url" content="https://jackhopkins.dev/onepage.html">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Jack G Hopkins — Technical Gameplay Designer">
     <meta name="twitter:description" content="Technical Gameplay Designer based in Cambridge, UK, currently shipping DLCs and live service content in Unreal Engine 5 at World Makers.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <style>
+        /* One-page-only tweaks: offset anchor scroll targets below the sticky nav. */
+        .hero[id], .page-block {
+            scroll-margin-top: 88px;
+        }
+        .page-block .page-header {
+            padding-top: var(--space-5);
+        }
+    </style>
 </head>
 
 <body>
@@ -29,13 +42,13 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <nav class="site-nav">
-        <a href="index.html" class="brand">Jack G Hopkins<span class="dot">.</span></a>
+        <a href="#home" class="brand">Jack G Hopkins<span class="dot">.</span></a>
         <ul class="nav-links">
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#home" aria-current="page">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
             <a href="pdf/Jack_Hopkins_CV.pdf" class="btn-mini" target="_blank" rel="noopener">CV ↓</a>
@@ -45,7 +58,7 @@
 
     <main id="main-content" tabindex="-1">
 
-        <header class="hero">
+        <header class="hero" id="home">
             <svg class="hero-graph" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <defs>
                     <linearGradient id="wireGrad" x1="0" y1="0" x2="1" y2="1">
@@ -75,15 +88,15 @@
                 <div class="hero-text">
                     <p class="eyebrow">Technical Gameplay Designer</p>
                     <h1>Jack G Hopkins</h1>
-                    <p class="hero-lede">Gameplay Designer specializing in implementing design into Unreal Engine. 
-                        Highly adept at collaborating across disciplines; bridging the gap between engineering, art, and production. 
+                    <p class="hero-lede">Gameplay Designer specializing in implementing design into Unreal Engine.
+                        Highly adept at collaborating across disciplines; bridging the gap between engineering, art, and production.
                         Proven track record of shipping maps, features, and DLCs. </p>
                         <br>
                     <p class="hero-lede">Based in Cambridge, UK. Currently a Gameplay Designer at World Makers.</p>
                     <div class="hero-actions">
                         <a href="pdf/Jack_Hopkins_CV.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download CV →</a>
-                        <a href="experience.html" class="btn btn-ghost">View experience</a>
-                        <a href="projects.html" class="btn btn-ghost">See project work</a>
+                        <a href="#experience" class="btn btn-ghost">View experience</a>
+                        <a href="#projects" class="btn btn-ghost">See project work</a>
                     </div>
                 </div>
                 <div class="hero-photo-slot">
@@ -91,6 +104,506 @@
                 </div>
             </div>
         </header>
+
+        <div class="page-block" id="experience">
+            <header class="page-header shell">
+                <p class="eyebrow">Career</p>
+                <h1>Experience</h1>
+                <p class="page-intro">Four years of professional game dev experience and one year of serious <span class="no-break">hobby-ing</span>.</p>
+            </header>
+
+            <section class="section shell skills-spectrum-section">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Top Skills</p>
+                </div>
+
+                <div class="skills-spectrum reveal">
+                    <div class="spectrum-axis">
+                        <span class="spectrum-label spectrum-label-left">Design</span>
+                        <div class="spectrum-track">
+                            <div class="spectrum-fill"></div>
+                            <!-- dot positions: left 12.5%, 37.5%, 62.5%, 87.5% of track -->
+                            <span class="spectrum-dot" style="left:12.5%"></span>
+                            <span class="spectrum-dot" style="left:37.5%"></span>
+                            <span class="spectrum-dot" style="left:62.5%"></span>
+                            <span class="spectrum-dot spectrum-dot-tech" style="left:87.5%"></span>
+                        </div>
+                        <span class="spectrum-label spectrum-label-right">Technical</span>
+                    </div>
+
+                    <div class="spectrum-cards">
+                        <article class="spectrum-card">
+                            <h3>Cross-Discipline Leadership</h3>
+                            <p>Communicating design vision across art, engineering and production, including
+                                coordination of local and international outsourcing teams.</p>
+                        </article>
+                        <article class="spectrum-card">
+                            <h3>Technical Design</h3>
+                            <p>Prototyping through to feature ownership across the full design-to-release
+                                pipeline — including DLC, maps, balancing passes, and live service content.</p>
+                        </article>
+                        <article class="spectrum-card">
+                            <h3>Player Research &amp; Feedback</h3>
+                            <p>Coordinating playtesting and community feedback loops, and feeding the results
+                                back into data-informed iteration.</p>
+                        </article>
+                        <article class="spectrum-card spectrum-card-tech">
+                            <h3>Unreal Engine 5</h3>
+                            <p>Blueprint visual scripting, the Gameplay Ability System, custom tooling and
+                                profiling across full production cycles.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <svg class="wire-divider" viewBox="0 0 1180 48" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="24" x2="1180" y2="24" stroke-dasharray="2 6" stroke-width="1" />
+                <circle cx="590" cy="24" r="4" stroke-width="1.2" />
+            </svg>
+
+            <section class="section shell">
+                <div class="timeline">
+
+                    <article class="timeline-entry reveal">
+                        <div class="timeline-rail">
+                            <span class="timeline-dot timeline-dot-current"></span>
+                            <span class="timeline-line"></span>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-date">Jan 2025 — Present</p>
+                            <h2>Gameplay Designer</h2>
+                            <div class="timeline-org-row">
+                                <div class="timeline-logo-slot timeline-logo-real">
+                                    <img src="img/world-makers-logo.jpg" alt="World Makers" width="300" height="300" loading="lazy">
+                                </div>
+                                <p class="timeline-org">World Makers, Cambridge</p>
+                            </div>
+                            <ul class="timeline-points">
+                                <li>Project lead on multiple DLCs, maps, game features, balancing passes and
+                                    season pass content, including work on <a href="#deceit-2" class="timeline-inline-link">Deceit 2</a>.</li>
+                                <li>Working on <a href="#mvx" class="timeline-inline-link">MVX: London</a>,
+                                    an original massive-scale PvE shooter currently in development. I was involved
+                                    in designing the macro gameplay loop mission system, the creature spawning
+                                    system, creature design, and designed and implemented individual missions.</li>
+                                <li>Led and communicated creative and design vision across all disciplines —
+                                    art, engineering and production — coordinating both local and international
+                                    outsourcing teams while contributing hands-on to implementation.</li>
+                                <li>Ensured designs stayed within technical and time requirements for the team
+                                    while still introducing and delivering unique game experiences to the
+                                    playerbase.</li>
+                                <li>Conducted genre research for a new unannounced project, identifying and
+                                    proposing suitable micro and macro gameplay loops to inform the design
+                                    direction.</li>
+                                <li>Presented updates to players in both live and scripted formats.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag">Unreal Engine 5</span>
+                                <span class="tag">Live Service</span>
+                                <span class="tag">Cross-Discipline Leadership</span>
+                            </div>
+                            <figure class="timeline-photo">
+                                <img src="img/world-makers-team.jpg" alt="Working at World Makers, reviewing a build in Unreal Engine with a teammate" width="750" height="553" loading="lazy">
+                                <figcaption>At World Makers, Cambridge</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="timeline-entry reveal">
+                        <div class="timeline-rail">
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-line"></span>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-date">Oct 2022 — Jan 2025</p>
+                            <h2>Graduate Gameplay Programmer</h2>
+                            <p class="timeline-org">World Makers, Cambridge</p>
+                            <ul class="timeline-points">
+                                <li>Programmed primarily in visual scripting across all areas of gameplay,
+                                    including architecture, networking, tooling, profiling and Unreal Engine
+                                    specific plugins like the Gameplay Ability System.</li>
+                                <li>Took designer-authored features from prototype to polished release across
+                                    multiple releases.</li>
+                                <li>Coordinated and curated feedback directly from long-time players and
+                                    playtesters to inform future design decisions.</li>
+                                <li>Implemented level blockouts across multiple disciplines using Unreal Engine
+                                    tools to guide and align creative teams.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag">Blueprint</span>
+                                <span class="tag">Gameplay Ability System</span>
+                                <span class="tag">Tooling</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="timeline-entry reveal">
+                        <div class="timeline-rail">
+                            <span class="timeline-dot"></span>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-date">Jun 2019 — Oct 2020</p>
+                            <h2>Founder &amp; Artist</h2>
+                            <div class="timeline-org-row">
+                                <div class="timeline-logo-slot timeline-logo-real">
+                                    <img src="img/astral-dawn-logo.png" alt="Astral Dawn Studios" width="300" height="300" loading="lazy">
+                                </div>
+                                <p class="timeline-org">Astral Dawn Studios, Windsor</p>
+                            </div>
+                            <ul class="timeline-points">
+                                <li>Self-directed development in Unity with two other founders. Developed a demo
+                                    with a public release.</li>
+                                <li>Created multiple devlogs for marketing and discussing design decisions, plus
+                                    tutorials on animating in Unity.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag">Unity</span>
+                                <span class="tag">Indie Dev</span>
+                                <span class="tag">Art Direction</span>
+                            </div>
+                            <a href="#astral-dawn" class="inline-link">See related project work →</a>
+                            <figure class="timeline-photo">
+                                <img src="img/dodo-animation.gif" alt="Dodo walking animation — Maria from Dodo Alone by Astral Dawn Studios" width="1280" height="1280" loading="lazy">
+                                <figcaption>Pixel animation from Dodo Alone — Astral Dawn Studios</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="page-block" id="projects">
+            <header class="page-header shell">
+                <p class="eyebrow">Selected Work</p>
+                <h1>Projects</h1>
+                <p class="page-intro">A mix of studio work and personal projects — from co-founding an indie
+                    studio to game jams built in 48 hours flat. Each one taught me something different about
+                    scope, collaboration, or just finishing what you start.</p>
+            </header>
+
+            <section class="section shell" id="deceit-2">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Professional Credits · World Makers</p>
+                    <h2 class="credits-head">Shipped and in-development work</h2>
+                </div>
+
+                <div class="project-multi-feature reveal">
+                    <div class="project-multi-feature-text">
+                        <p class="eyebrow">Shipped</p>
+                        <h3>Deceit 2</h3>
+                        <p>A shipped, live-service social deduction horror game, where I worked as a Gameplay
+                            Designer at World Makers. The clips below are a sample of recent gameplay from
+                            official and community channels.</p>
+                        <div class="tag-row">
+                            <span class="tag">Live Service</span>
+                            <span class="tag">Social Deduction</span>
+                        </div>
+                    </div>
+
+                    <div class="embed-row">
+
+                        <div class="embed-item">
+                            <p class="embed-platform-label">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <rect x="2" y="5" width="20" height="14" rx="4" stroke="#E8E6E1" stroke-width="1.6"/>
+                                    <path d="M10 9 L15 12 L10 15 Z" fill="#E8E6E1"/>
+                                </svg>
+                                Deceit 2 — Gameplay
+                            </p>
+                            <div class="media-frame">
+                                <video src="video/deceit2-alien.mp4" controls preload="metadata" playsinline title="Deceit 2 gameplay clip — Alien round"></video>
+                            </div>
+                        </div>
+
+                        <div class="embed-item">
+                            <p class="embed-platform-label">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M4 3 L4 16 L8 16 L8 20 L12 16 L17 16 L21 12 L21 3 Z" stroke="#E8E6E1" stroke-width="1.6" stroke-linejoin="round"/>
+                                    <rect x="13" y="6.5" width="1.8" height="5.5" fill="#E8E6E1"/>
+                                    <rect x="17" y="6.5" width="1.8" height="5.5" fill="#E8E6E1"/>
+                                </svg>
+                                Twitch
+                            </p>
+                            <div class="media-frame">
+                                <iframe src="https://player.twitch.tv/?video=2553004222&parent=jackghopkins.com&autoplay=false" title="Deceit 2 Twitch VOD" loading="lazy" allowfullscreen></iframe>
+                            </div>
+                            <a href="https://www.twitch.tv/videos/2553004222" class="embed-fallback-link" target="_blank" rel="noopener">View VOD on Twitch →</a>
+                        </div>
+
+                        <div class="embed-item">
+                            <p class="embed-platform-label">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <rect x="2" y="5" width="20" height="14" rx="4" stroke="#E8E6E1" stroke-width="1.6"/>
+                                    <path d="M10 9 L15 12 L10 15 Z" fill="#E8E6E1"/>
+                                </svg>
+                                Deceit 2 — Gameplay
+                            </p>
+                            <div class="media-frame">
+                                <video src="video/deceit2-torch.mp4" controls preload="metadata" playsinline title="Deceit 2 gameplay clip — Torch round"></video>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="project-multi-feature credits-secondary reveal" id="mvx">
+                    <div class="project-multi-feature-text">
+                        <p class="eyebrow">In Development</p>
+                        <h3>MVX: London</h3>
+                        <p>An original massive-scale PvE shooter, currently in development at World Makers'
+                            Cambridge studio. Set in a full-scale recreation of London, it's built around
+                            large-scale multiplayer encounters, dense crowds, and a richly simulated, reactive
+                            city — pushing the scale and physicality of multiplayer gameplay beyond typical
+                            match-based shooters.</p>
+                        <p>I was involved in designing the macro gameplay loop mission system, the creature
+                            spawning system, and creature design, and I designed and implemented individual
+                            missions.</p>
+                        <div class="tag-row">
+                            <span class="tag">Unreal Engine 5</span>
+                            <span class="tag">Mission Design</span>
+                            <span class="tag">Systems Design</span>
+                        </div>
+                        <a href="https://www.playmvx.com/" class="embed-fallback-link" target="_blank" rel="noopener">Visit playmvx.com →</a>
+                    </div>
+
+                    <div class="mvx-banner">
+                        <img src="img/mvx-banner.jpg" alt="MVX London — massive-scale PvE shooter set in London, in development at World Makers" width="1046" height="347" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <svg class="wire-divider" viewBox="0 0 1180 48" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="24" x2="1180" y2="24" stroke-dasharray="2 6" stroke-width="1" />
+                <circle cx="590" cy="24" r="4" stroke-width="1.2" />
+            </svg>
+
+            <section class="section shell" id="astral-dawn">
+                <div class="project-feature reveal">
+                    <div class="project-feature-media">
+                        <div class="media-frame">
+                            <iframe src="https://www.youtube-nocookie.com/embed/ggom9AIFGE4" title="Astral Dawn Studios compilation reel" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="project-feature-text">
+                        <p class="eyebrow">Co-Founded · 2019–2020</p>
+                        <h2>Astral Dawn Studios</h2>
+                        <p>An indie studio I started with two friends, working in Unity. We began with
+                            <em>Astral Dawn</em>, an ambitious JRPG — and learned the hard way that the scope
+                            was too broad for a three-person team. We shelved it and built <em>Dodo Alone</em>
+                            instead: a smaller, sharper 2D platformer about the extinction of the dodo, which
+                            we took to a public demo release.</p>
+                        <p>I led art direction and self-directed development alongside the founders, and
+                            produced devlogs and Unity animation tutorials to bring the community along with us.</p>
+                        <div class="tag-row">
+                            <span class="tag">Unity</span>
+                            <span class="tag">Art Direction</span>
+                            <span class="tag">Devlogs</span>
+                        </div>
+                        <a href="https://www.youtube.com/channel/UC4rxS3O4kLdKDtelmiEOexA" class="inline-link" target="_blank" rel="noopener">Watch more devlogs →</a>
+                    </div>
+                </div>
+            </section>
+
+            <svg class="wire-divider" viewBox="0 0 1180 48" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="24" x2="1180" y2="24" stroke-dasharray="2 6" stroke-width="1" />
+                <circle cx="590" cy="24" r="4" stroke-width="1.2" />
+            </svg>
+
+            <section class="section shell">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Game Jams</p>
+                </div>
+
+                <div class="project-grid">
+
+                    <article class="project-card reveal">
+                        <img src="img/gmtk-jam.jpg" alt="GMTK Jam 2021 — a newspaper office scene where you balance finance against clickbait headlines" width="1440" height="810" loading="lazy" class="project-card-img">
+                        <div class="project-card-head">
+                            <h3>GMTK Jam 2021</h3>
+                            <span class="tag">48hr Jam</span>
+                        </div>
+                        <p class="project-date">June 2021</p>
+                        <p>Built with three university friends in 48 hours on the theme "Joined Together."
+                            You play a journalist balancing finances against polarising, clickable articles.
+                            Ranked 860th of 5,800+ entries — 423rd for Presentation, the part of the project
+                            I led.</p>
+                        <a href="https://itch.io/jam/gmtk-2021/rate/1085190" class="inline-link" target="_blank" rel="noopener">View on itch.io →</a>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <img src="img/old-macdonald.jpg" alt="Old Macdonald's Farm title screen — tower-defence Ludum Dare entry" width="1440" height="810" loading="lazy" class="project-card-img">
+                        <div class="project-card-head">
+                            <h3>Old Macdonald's Farm</h3>
+                            <span class="tag">72hr Jam</span>
+                        </div>
+                        <p class="project-date">Ludum Dare 44</p>
+                        <p>A tower-defence game built around "Life is Currency," in the spirit of <em>Plants
+                            vs. Zombies</em>. Five animals defend the farm against waves of attackers stealing
+                            your livestock. A useful lesson in realistic scope under time pressure.</p>
+                        <a href="https://pi219.itch.io/oldmacdonald" class="inline-link" target="_blank" rel="noopener">View on itch.io →</a>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="page-block" id="education">
+            <header class="page-header shell">
+                <p class="eyebrow">Background</p>
+                <h1>Education</h1>
+                <p class="page-intro">A Master's in Games Engineering gave me the technical foundation —
+                    C++, real-time systems, and a dissertation in procedural animation. Before that, a
+                    self-directed research project in sixth form was where I first learned to actually finish
+                    a piece of design work.</p>
+            </header>
+
+            <section class="section shell">
+                <article class="edu-block reveal">
+                    <div class="edu-block-head">
+                        <div>
+                            <p class="eyebrow">Sep 2018 — Jun 2022</p>
+                            <h2>Newcastle University</h2>
+                            <p class="edu-degree">Master of Computing, Games Engineering — First Class Honours</p>
+                        </div>
+                        <span class="edu-grade">First Class</span>
+                    </div>
+
+                    <p class="edu-summary">An MEng focused on C++, with a networking module, a Master's
+                        dissertation on procedural animation using Unreal Engine, and a separate Bachelor's
+                        dissertation on procedural city generation.</p>
+
+                    <h3 class="edu-sub-head">Dissertation &amp; coursework highlights</h3>
+                    <div class="module-grid">
+                        <div class="module-card">
+                            <img src="img/masters-diss.jpg" alt="Procedural animation in Unreal Engine — mannequin walking with procedural limb placement" width="1582" height="896" loading="lazy" class="module-card-img">
+                            <p class="module-tag">Master's Dissertation · Unreal Engine</p>
+                            <h4>Procedural Animation</h4>
+                            <p>Implemented automated limb placement, ragdoll, partial physical animation and
+                                animation blending, researching rigid body algorithms including Featherstone's
+                                method. Built primarily in Blueprint with Unreal's Control Rig. Final grade: 88%.</p>
+                            <div class="module-card-links">
+                                <a href="https://github.com/JackGHopkins/Masters-Dissertation" class="embed-fallback-link" target="_blank" rel="noopener">GitHub →</a>
+                                <a href="https://www.youtube.com/watch?v=bjAZLYOqsb4" class="embed-fallback-link" target="_blank" rel="noopener">YouTube →</a>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <img src="img/proc-city.jpg" alt="Procedural city generation from a colour-coded layout diagram in Unity" width="1280" height="720" loading="lazy" class="module-card-img">
+                            <p class="module-tag">Bachelor's Dissertation · C# / Unity</p>
+                            <h4>Procedural City Generation with Flood Fill Algorithms</h4>
+                            <p>Researched generating settlements from a colour-coded layout diagram, enabling
+                                fast city creation without a necessary drop in quality — useful for both mock-ups
+                                and starting points for a full city.</p>
+                            <div class="module-card-links">
+                                <a href="https://github.com/JackGHopkins/CSC3095-Dissertation" class="embed-fallback-link" target="_blank" rel="noopener">GitHub →</a>
+                                <a href="https://www.youtube.com/watch?v=HVNwGBe0hbw" class="embed-fallback-link" target="_blank" rel="noopener">YouTube →</a>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <img src="img/screwball.jpg" alt="Screwball Scramble — 3D physics game in C++ with a ball navigating obstacles" width="1612" height="848" loading="lazy" class="module-card-img">
+                            <p class="module-tag">Advanced Game Technologies · C++</p>
+                            <h4>Screwball Scramble</h4>
+                            <p>A digital version of the classic mechanical game, implementing collision
+                                detection and resolution, menus, SFX and state-based AI, built on a base OpenGL
+                                render setup.</p>
+                            <div class="module-card-links">
+                                <a href="https://github.com/JackGHopkins/CSC8503-Screwball-Scamble" class="embed-fallback-link" target="_blank" rel="noopener">GitHub →</a>
+                                <a href="https://www.youtube.com/watch?v=pFGUsRoCzac" class="embed-fallback-link" target="_blank" rel="noopener">YouTube →</a>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <img src="img/afternoon-queen.jpg" alt="An Afternoon With The Queen — pixel art queen character from the Godot game" width="1440" height="810" loading="lazy" class="module-card-img">
+                            <p class="module-tag">Game Development · C# / Godot</p>
+                            <h4>An Afternoon With The Queen</h4>
+                            <p>A from-scratch build of "Ultimate Noughts and Crosses," played across multiple
+                                interwoven boards, with unbeatable AI opponents using Minimax and Alpha-Beta
+                                Pruning.</p>
+                            <div class="module-card-links">
+                                <a href="https://jackghopkins.itch.io/an-afternoon-with-the-queen" class="embed-fallback-link" target="_blank" rel="noopener">Play on itch.io →</a>
+                                <a href="https://www.youtube.com/watch?v=hhGJ2SNgJ8g" class="embed-fallback-link" target="_blank" rel="noopener">YouTube →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <svg class="wire-divider" viewBox="0 0 1180 48" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="24" x2="1180" y2="24" stroke-dasharray="2 6" stroke-width="1" />
+                <circle cx="590" cy="24" r="4" stroke-width="1.2" />
+            </svg>
+
+            <section class="section shell">
+                <article class="edu-block reveal">
+                    <div class="edu-block-head">
+                        <div>
+                            <p class="eyebrow">Sep 2013 — Jul 2018</p>
+                            <h2>The Windsor Boys' School</h2>
+                            <p class="edu-degree">Secondary School</p>
+                        </div>
+                    </div>
+
+                    <h3 class="edu-sub-head">Extended Project Qualification</h3>
+                    <div class="module-card module-card-wide">
+                        <img src="img/intuitive-game-design.jpg" alt="Intuitive Game Design EPQ — pixel platformer with ninja and animal character on a grass platform" width="1440" height="810" loading="lazy" class="module-card-img">
+                        <p class="module-tag">Self-Directed Research · Construct 2</p>
+                        <h4>Intuitive Game Design</h4>
+                        <p>Created the first level of a 2D platformer designed to teach the player how to play
+                            with zero verbal instruction, ending on a boss battle. Included a full dissertation
+                            and presentation alongside the build. Final grade: B.</p>
+                             <div class="module-card-links">
+                            <a href="https://www.youtube.com/watch?v=T5QGdknVgD4" class="embed-fallback-link" target="_blank" rel="noopener">YouTube →</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <div class="page-block" id="contact">
+            <header class="page-header shell">
+                <p class="eyebrow">Let's talk</p>
+                <h1>Contact</h1>
+                <p class="page-intro">Open to new opportunities in technical and gameplay design. The fastest
+                    way to reach me is email — happy to send over a full CV, references, or build samples on
+                    request.</p>
+            </header>
+
+            <section class="section shell contact-page-section">
+                <div class="contact-grid">
+
+                    <div class="contact-direct reveal">
+                        <a class="contact-row" href="mailto:jackghopkins@gmail.com">
+                            <span class="contact-row-label">Email</span>
+                            <span class="contact-row-value">jackghopkins@gmail.com</span>
+                            <span class="contact-row-arrow">→</span>
+                        </a>
+                        <a class="contact-row" href="tel:+447492987987">
+                            <span class="contact-row-label">Phone</span>
+                            <span class="contact-row-value">+44 7492 987987</span>
+                            <span class="contact-row-arrow">→</span>
+                        </a>
+                        <a class="contact-row" href="https://www.linkedin.com/in/jackghopkins/" target="_blank" rel="noopener">
+                            <span class="contact-row-label">LinkedIn</span>
+                            <span class="contact-row-value">/in/jackghopkins</span>
+                            <span class="contact-row-arrow">→</span>
+                        </a>
+                        <a class="contact-row" href="https://github.com/JackGHopkins" target="_blank" rel="noopener">
+                            <span class="contact-row-label">GitHub</span>
+                            <span class="contact-row-value">@JackGHopkins</span>
+                            <span class="contact-row-arrow">→</span>
+                        </a>
+                        <div class="contact-row contact-row-static">
+                            <span class="contact-row-label">Based in</span>
+                            <span class="contact-row-value">Cambridge, UK</span>
+                        </div>
+                    </div>
+
+                    <aside class="contact-card reveal">
+                        <img src="img/jack-contact.jpg" alt="Jack Hopkins" width="800" height="800" loading="lazy" class="contact-photo">
+                        <a href="pdf/Jack_Hopkins_CV.pdf" class="btn btn-primary contact-cv-btn" target="_blank" rel="noopener">Download CV →</a>
+                    </aside>
+
+                </div>
+            </section>
+        </div>
 
     </main>
 
@@ -110,6 +623,33 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Scroll-spy: highlight the nav link for whichever section is centred in view.
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('#main-content > .hero, #main-content > .page-block');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            if (!sections.length || !navLinks.length) return;
+
+            const setActive = (id) => {
+                navLinks.forEach(a => {
+                    if (a.getAttribute('href') === `#${id}`) {
+                        a.setAttribute('aria-current', 'page');
+                    } else {
+                        a.removeAttribute('aria-current');
+                    }
+                });
+            };
+
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) setActive(entry.target.id);
+                    });
+                }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+                sections.forEach(s => io.observe(s));
+            }
+        });
+    </script>
 </body>
 
 </html>
