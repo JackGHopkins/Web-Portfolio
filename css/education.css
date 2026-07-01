@@ -121,6 +121,32 @@
   line-height: 1.65;
 }
 
+.module-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.module-card-list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--text-dim);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.module-card-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  background: var(--wire);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
 .module-card-links {
   display: flex;
   flex-wrap: wrap;
