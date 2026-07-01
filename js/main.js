@@ -13,10 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll reveal. Generous rootMargin so content already in or near the
-  // viewport on load (including print/PDF rendering, fast scrollers, and
-  // automated full-page captures) reveals immediately rather than staying
-  // invisible until precise mid-scroll intersection.
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
     const io = new IntersectionObserver((entries) => {

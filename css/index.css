@@ -13,6 +13,10 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  /* Fade the wires out behind the text column so they don't cut across the
+     lede lines and hurt readability; keep them visible over the photo side. */
+  mask-image: linear-gradient(to right, transparent 0%, transparent 42%, black 62%, black 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 42%, black 62%, black 100%);
 }
 
 .wire-path {
@@ -85,6 +89,12 @@
     max-width: 280px;
     margin: 0 auto;
     order: -1;
+  }
+  /* Text now spans the full width below the stacked photo, so fade the
+     wires vertically instead — visible near the photo, gone by the text. */
+  .hero-graph {
+    mask-image: linear-gradient(to bottom, black 0%, black 22%, transparent 42%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 22%, transparent 42%);
   }
 }
 
