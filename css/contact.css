@@ -16,6 +16,62 @@
   border-top: 1px solid var(--line);
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: var(--space-3) 0.5rem var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--label);
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.75rem 0.9rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  transition: border-color 0.25s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--wire);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 .contact-row {
   display: grid;
   grid-template-columns: 100px 1fr 24px;

@@ -581,7 +581,6 @@
                                     <li>Created the first level of a 2D platformer designed to teach the player how
                                         to play with zero verbal instruction, ending on a boss battle</li>
                                     <li>Included a full dissertation and presentation alongside the build</li>
-                                    <li>Final grade: B</li>
                                 </ul>
                             </div>
                         </a>
@@ -603,16 +602,24 @@
                 <div class="contact-grid">
 
                     <div class="contact-direct reveal">
-                        <a class="contact-row" href="mailto:jackghopkins@gmail.com">
-                            <span class="contact-row-label">Email</span>
-                            <span class="contact-row-value">jackghopkins@gmail.com</span>
-                            <span class="contact-row-arrow">→</span>
-                        </a>
-                        <a class="contact-row" href="tel:+447492987987">
-                            <span class="contact-row-label">Phone</span>
-                            <span class="contact-row-value">+44 7492 987987</span>
-                            <span class="contact-row-arrow">→</span>
-                        </a>
+                        <form class="contact-form" action="https://formspree.io/f/mrewdkny" method="POST">
+                            <div class="form-field">
+                                <label for="contact-name">Name</label>
+                                <input type="text" id="contact-name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" rows="5" required></textarea>
+                            </div>
+                            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="hidden" name="_subject" value="New message from jackhopkins.dev">
+                            <button type="submit" class="btn btn-primary">Send message →</button>
+                        </form>
+
                         <a class="contact-row" href="https://www.linkedin.com/in/jackghopkins/" target="_blank" rel="noopener">
                             <span class="contact-row-label">LinkedIn</span>
                             <span class="contact-row-value">/in/jackghopkins</span>
@@ -647,7 +654,7 @@
                 Cambridge, UK
             </div>
             <div class="footer-links">
-                <a href="mailto:jackghopkins@gmail.com">Email</a>
+                <a href="#contact">Contact</a>
                 <a href="https://www.linkedin.com/in/jackghopkins/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://github.com/JackGHopkins" target="_blank" rel="noopener">GitHub</a>
                 <a href="pdf/Jack_Hopkins_CV.pdf" target="_blank" rel="noopener">CV</a>
