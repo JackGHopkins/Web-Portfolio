@@ -3,8 +3,8 @@
 <script data-goatcounter="https://jackghopkins.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 <head>
-    <script>document.documentElement.classList.remove("no-js");</script>
     <meta charset="utf-8">
+    <script>document.documentElement.classList.remove("no-js");</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Jack Hopkins — Technical Gameplay Designer specialising in Unreal Engine, Blueprint visual scripting and the Gameplay Ability System. Experience, projects, education and contact, all on one page.">
     <meta name="keywords" content="Jack Hopkins, Technical Gameplay Designer, Unreal Engine, Blueprint, Gameplay Ability System, Game Designer Cambridge">
@@ -44,7 +44,7 @@
 
     <nav class="site-nav">
         <a href="#home" class="brand">Jack G Hopkins<span class="dot">.</span></a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
             <li><a href="#home" aria-current="page">Home</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -54,7 +54,7 @@
         </ul>
         <div class="nav-cta">
             <a href="pdf/JackGHopkinsCV.pdf" class="btn-mini" target="_blank" rel="noopener">CV ↓</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">Menu</button>
         </div>
     </nav>
 
@@ -98,7 +98,7 @@
                         <br>
                     <p class="hero-lede">Based in Cambridge, UK. Currently a Gameplay Designer at World Makers. Has right to </p>
                     <div class="hero-actions">
-                        <a href="pdf/Jack_Hopkins_CV.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download CV →</a>
+                        <a href="pdf/JackGHopkinsCV.pdf" class="btn btn-primary" target="_blank" rel="noopener">Download CV →</a>
                     </div>
                 </div>
                 <div class="hero-photo-slot">
@@ -107,10 +107,10 @@
             </div>
         </header>
 
-        <div class="page-block" id="experience">
+        <section class="page-block" id="experience" aria-labelledby="experience-heading">
             <header class="page-header shell">
                 <p class="eyebrow">Career</p>
-                <h1>Experience</h1>
+                <h2 id="experience-heading">Experience</h2>
                 <p class="page-intro">Four years of professional game dev experience and one year of serious <span class="no-break">hobby-ing</span>.</p>
             </header>
 
@@ -272,12 +272,12 @@
 
                 </div>
             </section>
-        </div>
+        </section>
 
-        <div class="page-block" id="projects">
+        <section class="page-block" id="projects" aria-labelledby="projects-heading">
             <header class="page-header shell">
                 <p class="eyebrow">Selected Work</p>
-                <h1>Projects</h1>
+                <h2 id="projects-heading">Projects</h2>
                 <p class="page-intro">A mix of studio work and personal projects — from co-founding an indie
                     studio to game jams built in 48 hours flat. Each one taught me something different about
                     scope, collaboration, or just finishing what you start.</p>
@@ -453,12 +453,12 @@
 
                 </div>
             </section>
-        </div>
+        </section>
 
-        <div class="page-block" id="education">
+        <section class="page-block" id="education" aria-labelledby="education-heading">
             <header class="page-header shell">
                 <p class="eyebrow">Background</p>
-                <h1>Education</h1>
+                <h2 id="education-heading">Education</h2>
                 <p class="page-intro">A Master's in Games Engineering gave me the technical foundation —
                     C++, real-time systems, and a dissertation in procedural animation. Before that, a
                     self-directed research project in sixth form was where I first learned to actually finish
@@ -576,12 +576,12 @@
                     </div>
                 </article>
             </section>
-        </div>
+        </section>
 
-        <div class="page-block" id="personal">
+        <section class="page-block" id="personal" aria-labelledby="personal-heading">
             <header class="page-header shell">
                 <p class="eyebrow">Off Duty</p>
-                <h1>Personal</h1>
+                <h2 id="personal-heading">Personal</h2>
             </header>
 
             <section class="section shell">
@@ -604,12 +604,12 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </section>
 
-        <div class="page-block" id="contact">
+        <section class="page-block" id="contact" aria-labelledby="contact-heading">
             <header class="page-header shell">
                 <p class="eyebrow">Let's talk</p>
-                <h1>Contact</h1>
+                <h2 id="contact-heading">Contact</h2>
                 <p class="page-intro">Open to new opportunities in technical and gameplay design. The fastest
                     way to reach me is email — happy to send over a full CV, references, or build samples on
                     request.</p>
@@ -647,12 +647,12 @@
 
                     <aside class="contact-card reveal">
                         <img src="img/jack-contact.jpg" alt="Jack Hopkins" width="800" height="800" loading="lazy" class="contact-photo">
-                        <a href="pdf/Jack_Hopkins_CV.pdf" class="btn btn-primary contact-cv-btn" target="_blank" rel="noopener">Download CV →</a>
+                        <a href="pdf/JackGHopkinsCV.pdf" class="btn btn-primary contact-cv-btn" target="_blank" rel="noopener">Download CV →</a>
                     </aside>
 
                 </div>
             </section>
-        </div>
+        </section>
 
     </main>
 
@@ -666,7 +666,7 @@
                 <a href="mailto:jackghopkins@gmail.com">Email</a>
                 <a href="https://www.linkedin.com/in/jackghopkins/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://github.com/JackGHopkins" target="_blank" rel="noopener">GitHub</a>
-                <a href="pdf/Jack_Hopkins_CV.pdf" target="_blank" rel="noopener">CV</a>
+                <a href="pdf/JackGHopkinsCV.pdf" target="_blank" rel="noopener">CV</a>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
   border-bottom: 1px solid var(--line-faint);
 }
 
-.page-header h1 {
+.page-header h2 {
   font-size: clamp(2.1rem, 5vw, 3.2rem);
   margin: 0.8rem 0 1rem;
 }
