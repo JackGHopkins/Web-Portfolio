@@ -11,6 +11,13 @@
   border-top: 1px solid var(--line-faint);
 }
 
+.mvx-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  margin-top: 1.2rem;
+}
+
 .mvx-banner {
   margin-top: var(--space-3);
   border-radius: 8px;
@@ -18,10 +25,41 @@
   border: 1px solid var(--line);
 }
 
-.mvx-banner img {
+.mvx-banner img,
+.mvx-banner video {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Side-by-side media strip; becomes a swipeable conveyor on narrow screens */
+.mvx-conveyor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: var(--space-3);
+}
+
+.mvx-conveyor .mvx-banner {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 720px) {
+  .mvx-conveyor {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 0.6rem;
+  }
+
+  .mvx-conveyor .mvx-banner {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
 }
 
 .personal-feature {
